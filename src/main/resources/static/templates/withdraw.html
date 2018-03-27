@@ -1,0 +1,7 @@
+<div>
+    <form name="withdrawForm">
+        withdraw money:<input required type="number" ng-model="withdrawMoney"/>
+        <button type="submit" ng-click="withdraw(cardId,withdrawMoney)"
+                ng-disabled="withdrawForm.$invalid">submit</button>
+    </form>
+</div>

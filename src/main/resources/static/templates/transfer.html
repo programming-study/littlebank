@@ -1,0 +1,8 @@
+<div>
+    <form name="transferForm">
+        to account:<input required type="text" ng-model="toCardId"/><br/>
+        transfer money:<input required type="number" ng-model="transferMoney"/><br/>
+        <button type="submit" ng-click="transfer(cardId,toCardId,transferMoney)"
+                ng-disabled="transferForm.$invalid">submit</button>
+    </form>
+</div>

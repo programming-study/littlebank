@@ -1,6 +1,6 @@
-package server;
+package usst.cqk.server;
 
-import service.RPCServiceImplement;
+import usst.cqk.service.RPCServiceImplement;
 
 import java.net.Socket;
 
@@ -13,7 +13,7 @@ public class ServerThread implements Runnable {
     @Override
     public void run() {
         Server server = new Server();
-        server.register("service.RPCService",new RPCServiceImplement());
+        server.register("usst.cqk.service.RPCService",new RPCServiceImplement());
         try {
             server.service(this.clientSocket);
         } catch (Exception e) {

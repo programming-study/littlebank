@@ -1,4 +1,4 @@
-package service;
+package usst.cqk.service;
 
 import java.io.Serializable;
 

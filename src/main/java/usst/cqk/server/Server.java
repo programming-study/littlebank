@@ -1,6 +1,6 @@
-package server;
+package usst.cqk.server;
 
-import service.RemoteCall;
+import usst.cqk.service.RemoteCall;
 
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -64,7 +64,6 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(8000);
         while (true) {
             Socket clientSocket = serverSocket.accept();
-
 
             ServerThread serverThread = new ServerThread(clientSocket);
             Thread thread = new Thread(serverThread);

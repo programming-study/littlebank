@@ -3,8 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>bank</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/view.js"></script>
 </head>
-<body>
+<body ng-app="indexView" ng-controller="indexController">
 
+
+    <div ng-if="cardId=='0'">
+        <form name="loginInForm">
+            cardId:<input required type="text" ng-model="loginCardId"/><br/>
+            password:<input required type="password" ng-model="loginPassword"/><br/>
+            <button type="submit" ng-disabled="loginInForm.$invalid"
+                    ng-click="loginIn(loginCardId,loginPassword)">login in</button>
+            <button type="submit" ng-disabled="loginInForm.$invalid"
+                    ng-click="register(loginCardId,loginPassword)">register</button>
+        </form>
+    </div>
+
+    <div ng-if="cardId!='0'">
+    <div>
+        <button ng-click="loginOut()">login out</button>
+    </div>
+
+    <div>
+        <a ui-sref="checkRest" ui-sref-active="active">check rest</a>
+        <a ui-sref="deposit" ui-sref-active="active">deposit</a>
+        <a ui-sref="withdraw" ui-sref-active="active">withdraw</a>
+        <a ui-sref="transfer" ui-sref-active="active">transfer</a><br/>
+        <ui-view></ui-view>
+    </div>
+    </div>
+
+    <div>
+        <hr/>
+        <label>response message</label>
+        <h1>{{data.message}}</h1>
+    </div>
 </body>
 </html>

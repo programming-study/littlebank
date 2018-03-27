@@ -1,0 +1,7 @@
+<div>
+    <form name="depositForm">
+        deposit money:<input type="number" required ng-model="depositMoney"/>
+        <button type="submit" ng-click="deposit(cardId,depositMoney)"
+                ng-disabled="depositForm.$invalid">submit</button>
+    </form>
+</div>
